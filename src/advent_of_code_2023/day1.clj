@@ -3,7 +3,7 @@
             [clojure.string :as str]))
 
 (defn keep-only-integers-from-string [s]
-  (let [split-string (str/split s #"[^0-9]")
+  (let [split-string  (str/split s #"[^0-9]")
         non-blank-seq (filter #(not (str/blank? %)) split-string)]
     (str/join "" non-blank-seq)))
 

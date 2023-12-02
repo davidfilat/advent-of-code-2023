@@ -1,7 +1,7 @@
 (ns advent-of-code-2023.day1-test
-  (:require [clojure.test :refer :all]
-            [advent-of-code-2023.day1 :refer :all]
-            [advent-of-code-2023.util :as util]))
+  (:require [advent-of-code-2023.day1 :refer :all]
+            [advent-of-code-2023.util :as util]
+            [clojure.test :refer :all]))
 
 (deftest test-keep-only-integers-from-string
   (testing "Only integers are kept from string"
@@ -23,18 +23,16 @@
     (is (= "123" (replace-words-with-digits-sequential "onetwothree")))
     (is (= "456" (replace-words-with-digits-sequential "fourfivesix")))))
 
-; Mock the util/read-input function or provide a sample input file for these tests
-
 (deftest test-solution-part-1
   (with-redefs [util/read-input-file (fn [_] ["fivepqxlpninevh2xxsnsgg63pbvdnqptmg" "eight8zlctbmsixhrvbpjb84nnmlcqkzrsix" "ddgjgcrssevensix37twooneightgt"])]
-    (let [result (solution-part1 "fake-filename")
+    (let [result          (solution-part1 "fake-filename")
           expected-result 144]
-      (is (= expected-result result)))))
+      (is (= result expected-result)))))
 
 (deftest test-solution-part-2
   (with-redefs [util/read-input-file (fn [_] ["fivepqxlpninevh2xxsnsgg63pbvdnqptmg" "eight8zlctbmsixhrvbpjb84nnmlcqkzrsix" "ddgjgcrssevensix37twooneightgt"])]
-    (let [result (solution-part2 "fake-filename")
+    (let [result          (solution-part2 "fake-filename")
           expected-result 217]
-      (is (= expected-result result)))))
+      (is (= result expected-result)))))
 
 (run-tests)

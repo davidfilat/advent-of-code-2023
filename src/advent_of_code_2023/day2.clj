@@ -11,7 +11,7 @@
 
 (defn parse-game-data [data-str]
   (let [game-number (re-find #"\d+" data-str)
-        rounds (str/split (str/replace data-str #"Game \d+: " "") #"; ")]
+        rounds      (str/split (str/replace data-str #"Game \d+: " "") #"; ")]
     {:game-number (Integer/parseInt game-number)
      :rounds      (map parse-round rounds)}))
 
@@ -19,7 +19,7 @@
   (let [colors '("red" "blue" "green")]
     (into {}
           (map (fn [color]
-                 (let [rounds (get game :rounds)
+                 (let [rounds               (get game :rounds)
                        color-rounds-numbers (map #(get % color 0) rounds)]
                    [color (reduce max color-rounds-numbers)]))
                colors))))
@@ -30,7 +30,7 @@
           (keys map1)))
 
 (defn solution-part1 [filename]
-  (let [input (util/read-input-file filename)
+  (let [input             (util/read-input-file filename)
         available-marbles {"red" 12 "green" 13 "blue" 14}]
     (->> input
          (map parse-game-data)
