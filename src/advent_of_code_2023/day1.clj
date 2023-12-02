@@ -1,4 +1,7 @@
-(require '[advent-of-code-2023.util :as util] '[clojure.string :as str])
+(ns advent-of-code-2023.day1
+  (:require [advent-of-code-2023.util :as util]
+            [clojure.string :as str]))
+
 (defn keep-only-integers-from-string [s]
   (let [split-string (str/split s #"[^0-9]")
         non-blank-seq (filter #(not (str/blank? %)) split-string)]
@@ -10,9 +13,6 @@
 (defn get-head-and-last [s]
   [(first s) (last s)])
 
-(defn cast-all-sequence-element-to-integer [s]
-  (map #((str %)) s))
-
 (defn replace-words-with-digits-sequential [sentence]
   (let [digit-map {"one"  "1" "two" "2" "three" "3" "four" "4"
                    "five" "5" "six" "6" "seven" "7" "eight" "8" "nine" "9"}]
@@ -21,23 +21,22 @@
             digit-map)))
 
 (defn solution-part1 [filename]
-  (let [input (util/read-input filename)]
+  (let [input (util/read-input-file filename)]
     (->> input
          (map keep-only-integers-from-string)
          (map get-head-and-last)
          (map merge-numbers)
-         (reduce + 0)
-         )))
+         (reduce + 0))))
 
 (defn solution-part2 [filename]
-  (let [input (util/read-input filename)]
+  (let [input (util/read-input-file filename)]
     (->> input
          (map replace-words-with-digits-sequential)
          (map keep-only-integers-from-string)
          (map get-head-and-last)
          (map merge-numbers)
-         (reduce + 0)
-         )))
-(println (solution-part1 "day1.txt"))
-(println (solution-part2 "day1.txt"))
+         (reduce + 0))))
 
+(defn -main []
+  (println (solution-part1 "day1.txt"))
+  (println (solution-part2 "day1.txt")))

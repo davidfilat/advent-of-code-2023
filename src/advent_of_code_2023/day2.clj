@@ -1,4 +1,6 @@
-(require '[advent-of-code-2023.util :as util] '[clojure.string :as str])
+(ns advent-of-code-2023.day2
+  (:require [advent-of-code-2023.util :as util]
+            [clojure.string :as str]))
 
 (defn parse-round [round]
   (let [entries (str/split round #", ")]
@@ -28,26 +30,25 @@
           (keys map1)))
 
 (defn solution-part1 [filename]
-  (let [input (util/read-input filename)
+  (let [input (util/read-input-file filename)
         available-marbles {"red" 12 "green" 13 "blue" 14}]
     (->> input
          (map parse-game-data)
          (map #(assoc % :max-marbles (get-max-number-of-marbles-for-each-color %)))
          (filter #(all-keys-greater? available-marbles (:max-marbles %)))
          (map :game-number)
-         (reduce + 0)
-         )))
+         (reduce + 0))))
 
 (defn solution-part2 [filename]
-  (let [input (util/read-input filename)]
+  (let [input (util/read-input-file filename)]
     (->> input
          (map parse-game-data)
          (map get-max-number-of-marbles-for-each-color)
          (map vals)
          (map (partial filter #(> % 0)))
          (map #(reduce * 1 %))
-         (reduce + 0)
-         )))
-(println (solution-part1 "day2.txt"))
+         (reduce + 0))))
 
-(println (solution-part2 "day2.txt"))
+(defn -main []
+  (println (solution-part1 "day2.txt"))
+  (println (solution-part2 "day2.txt")))
