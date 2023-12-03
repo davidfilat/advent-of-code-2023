@@ -1,5 +1,5 @@
-(ns advent-of-code-2023.day2
-  (:require [advent-of-code-2023.util :as util]
+(ns advent-of-code-2023.solutions.day2
+  (:require [advent-of-code-2023.util.common :as util]
             [clojure.string :as str]))
 
 (defn parse-round [round]
@@ -50,5 +50,5 @@
          (reduce + 0))))
 
 (defn -main []
-  (println (solution-part1 "day2.txt"))
-  (println (solution-part2 "day2.txt")))
+  (println "Part 1: " (solution-part1 "day2.txt"))
+  (println "Part 2: " (solution-part2 "day2.txt")))

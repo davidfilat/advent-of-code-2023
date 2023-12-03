@@ -1,6 +1,6 @@
-(ns advent-of-code-2023.day1-test
-  (:require [advent-of-code-2023.day1 :refer :all]
-            [advent-of-code-2023.util :as util]
+(ns advent-of-code-2023.solutions.day1-test
+  (:require [advent-of-code-2023.solutions.day1 :refer :all]
+            [advent-of-code-2023.util.common :as util]
             [clojure.test :refer :all]))
 
 (deftest test-keep-only-integers-from-string

@@ -1,5 +1,5 @@
-(ns advent-of-code-2023.day1
-  (:require [advent-of-code-2023.util :as util]
+(ns advent-of-code-2023.solutions.day1
+  (:require [advent-of-code-2023.util.common :as util]
             [clojure.string :as str]))
 
 (defn keep-only-integers-from-string [s]
@@ -38,5 +38,5 @@
          (reduce + 0))))
 
 (defn -main []
-  (println (solution-part1 "day1.txt"))
-  (println (solution-part2 "day1.txt")))
+  (println "Part 1: " (solution-part1 "day1.txt"))
+  (println "Part 2: " (solution-part2 "day1.txt")))

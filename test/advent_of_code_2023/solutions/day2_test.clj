@@ -1,6 +1,6 @@
-(ns advent-of-code-2023.day2-test
-  (:require [advent-of-code-2023.day2 :refer :all]
-            [advent-of-code-2023.util :as util]
+(ns advent-of-code-2023.solutions.day2-test
+  (:require [advent-of-code-2023.solutions.day2 :refer :all]
+            [advent-of-code-2023.util.common :as util]
             [clojure.test :refer :all]))
 
 (deftest test-parse-round
