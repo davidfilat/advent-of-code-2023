@@ -154,5 +154,5 @@
 (defn -main
   []
   (let [filename "day5.txt"]
-    (println (solution-part1 filename))
-    (println (solution-part2 filename))))
+    (println "Part 1: " (solution-part1 filename))
+    (println "Part 2: " (solution-part2 filename))))

@@ -1,44 +1,45 @@
-# advent-of-code-2023
+# Advent of Code 2023
 
-FIXME: description
+This is a Clojure project for solving the Advent of Code 2023 puzzles.
 
-## Installation
+## Prerequisites
 
-Download from http://example.com/FIXME.
+You will need [Leiningen](https://leiningen.org/) 2.0.0 or above installed.
 
-## Usage
+## Building
 
-FIXME: explanation
+To build the project, navigate to the project directory and run the following command:
 
-    $ java -jar advent-of-code-2023-0.1.0-standalone.jar [args]
+```bash
+lein compile
+```
 
-## Options
+This will compile the source code into Java bytecode.
 
-FIXME: listing of options this app accepts.
+## Running
 
-## Examples
+To run the project, use the following command:
 
-...
+```bash
+lein run
+```
 
-### Bugs
+This will start the program. The program reads input data from a file and prints the solutions to the puzzles.
 
-...
+## Testing
 
-### Any Other Sections
-### That You Think
-### Might be Useful
+To run the tests, use the following command:
+
+```bash
+lein test
+```
+
+This will run all the tests in the project and print a summary of the results.
 
 ## License
 
-Copyright © 2023 FIXME
+Copyright © 2023
 
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
+This program and the accompanying materials are made available under the terms of the Eclipse Public License 2.0 which
+is available at http://www.eclipse.org/legal/epl-2.0.
 
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
