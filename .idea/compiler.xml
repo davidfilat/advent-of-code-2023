@@ -14,5 +14,13 @@
       <entry name="!?*.clj" />
       <entry name="!?*.aj" />
     </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="advent-of-code-2023" />
+      </profile>
+    </annotationProcessing>
   </component>
 </project>

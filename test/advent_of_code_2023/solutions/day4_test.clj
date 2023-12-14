@@ -8,10 +8,15 @@
 
 (deftest test-parse-card-line
   (testing "Parsing card line"
-    (let [result (parse-card-line "Card   1: 82 41 56 54 18 62 29 55 34 20 | 37 14 10 80 58 11 65 96 90  8 59 32 53 21 98 83 17  9 87 25 71 77 70 73 24")]
+    (let
+      [result
+         (parse-card-line
+           "Card   1: 82 41 56 54 18 62 29 55 34 20 | 37 14 10 80 58 11 65 96 90  8 59 32 53 21 98 83 17  9 87 25 71 77 70 73 24")]
       (is (= (:card-number result) 1))
       (is (= (:winning-numbers result) [82 41 56 54 18 62 29 55 34 20]))
-      (is (= (:my-numbers result) [37 14 10 80 58 11 65 96 90 8 59 32 53 21 98 83 17 9 87 25 71 77 70 73 24])))))
+      (is (= (:my-numbers result)
+             [37 14 10 80 58 11 65 96 90 8 59 32 53 21 98 83 17 9 87 25 71 77 70
+              73 24])))))
 
 (def test-input
   ["Card 1: 41 48 83 86 17 | 83 86 6 31 17 9 48 53"
@@ -22,24 +27,26 @@
    "Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11"])
 
 (deftest process-card-stack-test
-  (let [parsed-cards    (map parse-card-line test-input)
-        card-stack      (vec parsed-cards)
+  (let [parsed-cards (map parse-card-line test-input)
+        card-stack (vec parsed-cards)
         processed-stack (process-card-stack card-stack)]
     (is (= (map :copies processed-stack) [1 2 4 8 14 1]))))
 
 (deftest get-intersection-test
-  (let [card {:winning-numbers [83 86 6 31 17 9 48 53], :my-numbers [41 48 83 86 17]}]
+  (let [card {:winning-numbers [83 86 6 31 17 9 48 53],
+              :my-numbers [41 48 83 86 17]}]
     (is (= (get-intersection card) #{83 86 48 17}))))
 
-(deftest get-score-test
-  (is (= (get-score [83 86 48 17]) 8)))
+(deftest get-score-test (is (= (get-score [83 86 48 17]) 8)))
 
 (deftest get-card-score-test
-  (let [card {:winning-numbers [83 86 6 31 17 9 48 53], :my-numbers [41 48 83 86 17]}]
+  (let [card {:winning-numbers [83 86 6 31 17 9 48 53],
+              :my-numbers [41 48 83 86 17]}]
     (is (= (get-card-score card) 8))))
 
 (deftest count-winning-numbers-test
-  (let [card {:winning-numbers [83 86 6 31 17 9 48 53], :my-numbers [41 48 83 86 17]}]
+  (let [card {:winning-numbers [83 86 6 31 17 9 48 53],
+              :my-numbers [41 48 83 86 17]}]
     (is (= (count-winning-numbers card) 4))))
 
 (deftest solution-part1-test

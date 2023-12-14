@@ -24,14 +24,20 @@
     (is (= "456" (replace-words-with-digits-sequential "fourfivesix")))))
 
 (deftest test-solution-part-1
-  (with-redefs [util/read-input-file (fn [_] ["fivepqxlpninevh2xxsnsgg63pbvdnqptmg" "eight8zlctbmsixhrvbpjb84nnmlcqkzrsix" "ddgjgcrssevensix37twooneightgt"])]
-    (let [result          (solution-part1 "fake-filename")
+  (with-redefs [util/read-input-file (fn [_]
+                                       ["fivepqxlpninevh2xxsnsgg63pbvdnqptmg"
+                                        "eight8zlctbmsixhrvbpjb84nnmlcqkzrsix"
+                                        "ddgjgcrssevensix37twooneightgt"])]
+    (let [result (solution-part1 "fake-filename")
           expected-result 144]
       (is (= result expected-result)))))
 
 (deftest test-solution-part-2
-  (with-redefs [util/read-input-file (fn [_] ["fivepqxlpninevh2xxsnsgg63pbvdnqptmg" "eight8zlctbmsixhrvbpjb84nnmlcqkzrsix" "ddgjgcrssevensix37twooneightgt"])]
-    (let [result          (solution-part2 "fake-filename")
+  (with-redefs [util/read-input-file (fn [_]
+                                       ["fivepqxlpninevh2xxsnsgg63pbvdnqptmg"
+                                        "eight8zlctbmsixhrvbpjb84nnmlcqkzrsix"
+                                        "ddgjgcrssevensix37twooneightgt"])]
+    (let [result (solution-part2 "fake-filename")
           expected-result 217]
       (is (= result expected-result)))))
 
