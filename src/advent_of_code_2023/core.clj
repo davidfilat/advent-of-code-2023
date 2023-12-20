@@ -6,7 +6,8 @@
             [advent-of-code-2023.solutions.day5 :as day5]
             [advent-of-code-2023.solutions.day6 :as day6]
             [advent-of-code-2023.solutions.day7 :as day7]
-            [advent-of-code-2023.solutions.day8 :as day8]))
+            [advent-of-code-2023.solutions.day8 :as day8]
+            [advent-of-code-2023.solutions.day9 :as day9]))
 
 (defn -main
   "Execute all solutions."
@@ -26,4 +27,6 @@
   (println "Day 7")
   (day7/-main)
   (println "Day 8")
-  (day8/-main))
+  (day8/-main)
+  (println "Day 9")
+  (day9/-main))

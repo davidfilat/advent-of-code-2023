@@ -1,7 +1,11 @@
 (ns advent-of-code-2023.util.math)
 
-;greatest common divisor
-(defn gcd [a b] (if (zero? b) a (recur b (mod a b))))
+(defn gcd
+  "Find the greatest common divisor"
+  ^Number [^Number a ^Number b]
+  (if (zero? b) a (recur b (mod a b))))
 
-;least common multiple
-(defn lcm [a b] (/ (* a b) (gcd a b)))
+(defn lcm
+  "Find the lowest common multiplier"
+  ^Number [^Number a ^Number b]
+  (/ (* a b) (gcd a b)))
