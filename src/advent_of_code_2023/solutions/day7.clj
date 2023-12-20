@@ -37,7 +37,6 @@
        frequencies
        ((juxt identity (comp sort vals) #(apply max (vals %))))))
 
-
 (defn is-hand-five-of-a-kind?
   ^Boolean [^Boolean is-joker-wildcard? ^List hand]
   (let [[frequencies _ max-freq] (parse-frequencies hand)
@@ -93,7 +92,7 @@
   ^Boolean [^Boolean is-joker-wildcard? ^List hand]
   (let [[frequencies freq-vals max-freq] (parse-frequencies hand)
         number-of-jokers (get frequencies "J" 0)]
-    (or (= (sort freq-vals) [1 1 1 2])
+    (or (= freq-vals [1 1 1 2])
         (and is-joker-wildcard? (= max-freq 1) (= number-of-jokers 1)))))
 
 (defn is-hand-high-card?

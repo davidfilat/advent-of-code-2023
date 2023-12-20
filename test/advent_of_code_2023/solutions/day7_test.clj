@@ -45,7 +45,6 @@
               [["K" "K" "6" "7" "7"] 28] [["T" "5" "5" "J" "5"] 684]
               [["Q" "Q" "Q" "J" "A"] 483]])))))
 
-
 (deftest test-is-hand-five-of-a-kind
   (testing "is-hand-five-of-a-kind? function"
     (is (= true (is-hand-five-of-a-kind? false ["2" "2" "2" "2" "2"])))

@@ -9,7 +9,8 @@
   :target-path "target/%s"
   :plugins [[dev.weavejester/lein-cljfmt "0.11.2"]
             [lein-zprint "1.2.8"]
-            [lein-exec "0.3.7"]]
+            [lein-exec "0.3.7"]
+            [lein-cloverage "1.2.2"]]
   :profiles {:uberjar {:aot :all,
                        :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}}
   :zprint {:old? false})
