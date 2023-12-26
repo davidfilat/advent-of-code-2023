@@ -15,3 +15,12 @@
     (is (= (find-value #(> % 10) [1 2 3 4 5 11]) 11)))
   (testing "No value satisfies the predicate"
     (is (nil? (find-value #(> % 10) [1 2 3 4 5])))))
+
+
+(deftest test-find-index
+  (testing "Find index of first even number"
+    (is (= (find-index even? [1 2 3 4 5]) 1)))
+  (testing "Find index of first number greater than 10"
+    (is (= (find-index #(> % 10) [1 2 3 4 5 11]) 5)))
+  (testing "No index satisfies the predicate"
+    (is (nil? (find-index #(> % 10) [1 2 3 4 5])))))
