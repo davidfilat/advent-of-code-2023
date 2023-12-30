@@ -1,5 +1,7 @@
 (ns advent-of-code-2023.core
   (:require [advent-of-code-2023.solutions.day1 :as day1]
+            [advent-of-code-2023.solutions.day10 :as day10]
+            [advent-of-code-2023.solutions.day11 :as day11]
             [advent-of-code-2023.solutions.day2 :as day2]
             [advent-of-code-2023.solutions.day3 :as day3]
             [advent-of-code-2023.solutions.day4 :as day4]
@@ -29,4 +31,8 @@
   (println "Day 8")
   (day8/-main)
   (println "Day 9")
-  (day9/-main))
+  (day9/-main)
+  (println "Day 10")
+  (day10/-main)
+  (println "Day 11")
+  (day11/-main))

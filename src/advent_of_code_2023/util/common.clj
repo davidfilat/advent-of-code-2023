@@ -9,7 +9,7 @@
 
 (defn find-value [pred coll] (some #(when (pred %) %) coll))
 
-
+(defn between? [x a b] (and (<= a x) (<= x b)))
 
 (defn find-index
   [pred coll]

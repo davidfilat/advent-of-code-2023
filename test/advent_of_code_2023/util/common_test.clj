@@ -16,6 +16,14 @@
   (testing "No value satisfies the predicate"
     (is (nil? (find-value #(> % 10) [1 2 3 4 5])))))
 
+(deftest test-between?
+  (testing "between? function"
+    (is (true? (between? 5 1 10)))
+    (is (true? (between? 1 1 10)))
+    (is (true? (between? 10 1 10)))
+    (is (false? (between? 0 1 10)))
+    (is (false? (between? 11 1 10)))))
+
 
 (deftest test-find-index
   (testing "Find index of first even number"

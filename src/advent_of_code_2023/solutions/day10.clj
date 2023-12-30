@@ -22,7 +22,7 @@
 (defn find-start-coordinates
   [^List input]
   (let [y (util/find-index #(.contains % "S") input)
-        x (util/find-index (partial = "S") (get input y))]
+        x (.indexOf (get input y) "S")]
     [y x]))
 
 
@@ -72,7 +72,8 @@
 
 
 
-(defn solution-part2 [raw-input] ())
+
+(defn solution-part2 [raw-input] "To be implemented...")
 
 
 (defn -main
