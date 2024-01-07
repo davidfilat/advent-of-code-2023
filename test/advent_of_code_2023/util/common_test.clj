@@ -24,7 +24,6 @@
     (is (false? (between? 0 1 10)))
     (is (false? (between? 11 1 10)))))
 
-
 (deftest test-find-index
   (testing "Find index of first even number"
     (is (= (find-index even? [1 2 3 4 5]) 1)))

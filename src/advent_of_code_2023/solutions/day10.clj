@@ -25,7 +25,6 @@
         x (.indexOf (get input y) "S")]
     [y x]))
 
-
 (defn get-pipe-at-coordinates [map coordinates] (get-in map coordinates nil))
 
 (defn is-junction? [pipe] (contains? junctions-map pipe))
@@ -59,7 +58,6 @@
     (some (fn [direction] (navigate-pipes map start-coordinates direction))
           directions)))
 
-
 (defn solution-part1
   [^List raw-input]
   (let [grid (parse-input raw-input)
@@ -70,11 +68,7 @@
          (max)
          (#(/ % 2)))))
 
-
-
-
 (defn solution-part2 [raw-input] "To be implemented...")
-
 
 (defn -main
   []
