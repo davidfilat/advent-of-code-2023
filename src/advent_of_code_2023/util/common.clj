@@ -7,7 +7,7 @@
 
 (defn in-range? [value start end] (and (>= value start) (<= value end)))
 
-(defn find-value [pred coll] (some #(when (pred %) %) coll))
+(defn find-value [pred seq] (some #(when (pred %) %) seq))
 
 (defn between? [x a b] (and (<= a x) (<= x b)))
 
@@ -15,3 +15,5 @@
   [pred coll]
   (let [matched-index (first (keep-indexed #(when (pred %2) %1) coll))]
     (if (nil? matched-index) nil matched-index)))
+
+

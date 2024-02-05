@@ -2,6 +2,8 @@
   (:require [advent-of-code-2023.solutions.day1 :as day1]
             [advent-of-code-2023.solutions.day10 :as day10]
             [advent-of-code-2023.solutions.day11 :as day11]
+            [advent-of-code-2023.solutions.day12 :as day12]
+            [advent-of-code-2023.solutions.day13 :as day13]
             [advent-of-code-2023.solutions.day2 :as day2]
             [advent-of-code-2023.solutions.day3 :as day3]
             [advent-of-code-2023.solutions.day4 :as day4]
@@ -35,4 +37,8 @@
   (println "Day 10")
   (day10/-main)
   (println "Day 11")
-  (day11/-main))
+  (day11/-main)
+  (println "Day 12")
+  (day12/-main)
+  (println "Day 13")
+  (day13/-main))
