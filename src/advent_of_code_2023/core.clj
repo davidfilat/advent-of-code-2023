@@ -4,6 +4,7 @@
             [advent-of-code-2023.solutions.day11 :as day11]
             [advent-of-code-2023.solutions.day12 :as day12]
             [advent-of-code-2023.solutions.day13 :as day13]
+            [advent-of-code-2023.solutions.day14 :as day14]
             [advent-of-code-2023.solutions.day2 :as day2]
             [advent-of-code-2023.solutions.day3 :as day3]
             [advent-of-code-2023.solutions.day4 :as day4]
@@ -41,4 +42,6 @@
   (println "Day 12")
   (day12/-main)
   (println "Day 13")
-  (day13/-main))
+  (day13/-main)
+  (println "Day 14")
+  (day14/-main))
