@@ -26,7 +26,7 @@
 (defn move-stones-in-column
   [column]
   (let [segments (partition-by false? column)]
-    (vec (mapcat move-stones-to-the-end segments))))
+    (mapcat move-stones-to-the-end segments)))
 (defn move-all-stones [grid] (mapv move-stones-in-column grid))
 
 (defn calculate-load-per-column
@@ -48,7 +48,9 @@
   [grid]
   (let [rotations [:north :west :south :east]]
     (reduce (fn [acc direction]
-              ((comp move-all-stones #(rotate-grid direction %)) acc))
+              (->> acc
+                   (rotate-grid direction)
+                   (move-all-stones)))
       grid
       rotations)))
 
@@ -62,7 +64,7 @@
 (defn solution-part2
   [input]
   (let [grid (parse-input input)
-        target-cycles 1000000000
+        target-cycles 1e9
         sample-loads (map calculate-total-load
                        (take 200 (iterate spin-cycle grid)))
         cycle-length (count (distinct sample-loads))
