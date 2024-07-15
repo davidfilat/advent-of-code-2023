@@ -53,6 +53,7 @@
                      (= operation "-") (remove-lens box instruction)
                      :else (throw (Exception. "Unsupported operation")))
                box))))))
+
 (defn apply-all-instructions
   [wall instructions]
   (reduce apply-instruction wall instructions))
@@ -73,6 +74,7 @@
          (map-indexed calculate-focusing-power)
          (flatten)
          (reduce +))))
+
 (defn -main
   []
   (let [input (apply str (util/read-input-file "day15.txt"))]

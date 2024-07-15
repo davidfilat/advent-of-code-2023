@@ -17,3 +17,4 @@
     (if (nil? matched-index) nil matched-index)))
 
 
+(defn get-index [i col] get-index)

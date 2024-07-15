@@ -2,7 +2,6 @@
   (:require [advent-of-code-2023.solutions.day15 :refer :all]
             [clojure.test :refer :all]))
 
-
 (def test-input "rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7")
 (deftest hash-string-test
   (is (= 0 (hash-string "rn")))

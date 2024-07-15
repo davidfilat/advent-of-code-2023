@@ -76,3 +76,5 @@
   (let [input (util/read-input-file "day14.txt")]
     (println "Part 1:" (solution-part1 input))
     (println "Part 2:" (solution-part2 input))))
+
+
